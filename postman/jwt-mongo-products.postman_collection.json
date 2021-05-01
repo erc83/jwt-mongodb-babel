@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "88c3fdd1-1013-4f32-afc4-e48f9b3be16e",
+		"name": "jwt-mongo-products",
+		"description": "esta api sirve para conectar base de datos mongodb y jwt usando babel ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "/products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/products",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"laptop hp\",\r\n    \"price\":\"999.99\",\r\n    \"category\":\"laptops\",\r\n    \"imgURL\":\"https://image.shutterstock.com/image-photo/kyiv-ukraine-fabruary-28th-2017-260nw-590283734.jpg\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": []
+		},
+		{
+			"name": "auth",
+			"item": []
+		}
+	]
+}
