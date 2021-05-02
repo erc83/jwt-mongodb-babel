@@ -10,6 +10,8 @@ import {
     deleteProductById
 } from '../controllers/products.controller'
 
+// import {verifyToken} from '../middlewares/index'
+
 
 router.post('/', createProduct)
 
@@ -20,9 +22,6 @@ router.get('/:productId', getProductById)
 router.put('/:productId', updateProductById)
 
 router.delete('/:productId', deleteProductById)
-
-
-
 
 
 export default router;
