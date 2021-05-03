@@ -1,3 +1,5 @@
 import {verifyToken, isModerator, isAdmin} from './authJwt'
 
-export { verifyToken, isModerator, isAdmin };
+import {checkRolesExisted} from './verifyRegister'
+
+export { verifyToken, isModerator, isAdmin , checkRolesExisted};
