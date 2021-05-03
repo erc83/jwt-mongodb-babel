@@ -13,16 +13,43 @@
 					"name": "/products",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:4000/products",
+							"raw": "http://localhost:4000/products/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "4000",
 							"path": [
-								"products"
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/products/:productId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/products/608d09bad2a34110303306c9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"products",
+								"608d09bad2a34110303306c9"
 							]
 						}
 					},
@@ -56,16 +83,216 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "/products/:productId",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"laptop hp Thinkpad t400\",\r\n    \"price\":\"100\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/products/608d0ea3a8d8a3109a99cfdc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"products",
+								"608d0ea3a8d8a3109a99cfdc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/products/:productId",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"laptop hp Thinkpad t400\",\r\n    \"price\":\"100\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/products/608d0ea3a8d8a3109a99cfdc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"products",
+								"608d0ea3a8d8a3109a99cfdc"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
 		{
 			"name": "users",
-			"item": []
+			"item": [
+				{
+					"name": "/users  ( roleRechazado)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGUyOWQ3MWNmZTRhMTZmMDQ5NzQ1NiIsImlhdCI6MTYyMDAxMzEzOSwiZXhwIjoxNjIwMDk5NTM5fQ.Lnjl8BH-TrbFunHrjIIONz78e_sgv9bbVarHb9fJHXI",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"rolly\",\r\n    \"email\": \"rolly@gmail.com\",\r\n    \"roles\": [\"superadmin\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users (roleAceptado)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwOGUyOWQ3MWNmZTRhMTZmMDQ5NzQ1NiIsImlhdCI6MTYyMDAxMzEzOSwiZXhwIjoxNjIwMDk5NTM5fQ.Lnjl8BH-TrbFunHrjIIONz78e_sgv9bbVarHb9fJHXI",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"rolly\",\r\n    \"email\": \"rolly@gmail.com\",\r\n    \"roles\": [\"superadmin\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "auth",
-			"item": []
+			"item": [
+				{
+					"name": "/auth/register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"stgo\",\r\n    \"email\": \"stgo@gmail.com\",\r\n    \"password\": \"123123\",\r\n    \"roles\": [\"admin\"]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/auth/login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"eric@gmail.com\",\r\n    \"password\": \"123123\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:4000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
