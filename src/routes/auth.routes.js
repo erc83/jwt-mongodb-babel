@@ -7,8 +7,13 @@ const router = Router()
 
 
 import {Login, Register} from '../controllers/auth.controller'
+import {checkDuplicateUsernameOrEmail, checkRolesExisted} from '../middlewares/verifyRegister'
+ 
 
-router.post('/login', Login)
-router.post('/register', Register)
+router.post('/register', 
+    [checkDuplicateUsernameOrEmail, checkRolesExisted], 
+    Register 
+);
+router.post('/login', Login);
 
 export default router;
