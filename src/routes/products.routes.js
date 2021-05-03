@@ -10,18 +10,18 @@ import {
     deleteProductById
 } from '../controllers/products.controller'
 
-// import {verifyToken} from '../middlewares/index'
+import {verifyToken, isModerator} from '../middlewares/index'
 
 
-router.post('/', createProduct)
+router.post('/', [verifyToken, isModerator], createProduct)
 
 router.get('/', getProducts)
 
 router.get('/:productId', getProductById)
 
-router.put('/:productId', updateProductById)
+router.put('/:productId', [verifyToken, isModerator], updateProductById)
 
-router.delete('/:productId', deleteProductById)
+router.delete('/:productId', [verifyToken, isModerator], deleteProductById)
 
 
 export default router;
